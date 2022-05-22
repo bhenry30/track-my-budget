@@ -1,5 +1,3 @@
-const { response } = require("express");
-const { post } = require("../../routes/api");
 
 let db;
 
@@ -7,7 +5,6 @@ const request = indexedDB.open('track_my_budget', 1)
 
 request.onupgradeneeded = e => {
     const db = e.target.result;
-    db.createObjectStore('pending', { autoIncrement: True })
 }
 
 request.onsuccess = e => {
